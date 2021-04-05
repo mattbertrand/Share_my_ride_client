@@ -10,4 +10,4 @@ class Home extends Component {
     }
 }
 
-export default HomePage
+export default Home
