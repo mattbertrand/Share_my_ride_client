@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import About from './components/About'
+import Index from './components/index'
 import ErrorPage from './components/ErrorPage'
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path="/about" component={ About } />
+          <Route exact path="/rides" component={ Index }/>
           <Route component={ErrorPage} />
         </Switch>
         <Footer />

@@ -4,7 +4,7 @@ class Footer extends Component {
     render() {
         return (
             <div>
-                Footer
+                &copy; Share My Ride, 2021
             </div>
         )
     }
