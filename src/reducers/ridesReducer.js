@@ -5,12 +5,12 @@ const initialState = {
 
 const ridesReducer = (state=initialState, action) => {
     switch(action.type) {
-        case 'LOADING':
+        case "LOADING":
             return {
                 ...state,
                 loading: true
             }
-        case 'SET_RIDES':
+        case "SET_RIDES":
             return {
                 ...state,
                 loading: false,

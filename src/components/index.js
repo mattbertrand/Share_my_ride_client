@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Ride from './Ride'
 
-class index extends Component {
+class Index extends Component {
     render() {
+        const rides = this.props.rides.map( (ride, i) => <Ride key={i} departure={ ride.departure } destination={ ride.destination } date={ ride.date } />)
         return (
             <div>
-                List Page
+                { rides }
             </div>
         )
     }
 }
 
-export default index
+const mapStateToProps = state => {
+    return {
+        rides: state.rides
+    }
+}
+
+export default connect(mapStateToProps)(Index)

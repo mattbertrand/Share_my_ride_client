@@ -6,10 +6,15 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import About from './components/About'
-import Index from './components/index'
+import Index from './components/Index'
 import ErrorPage from './components/ErrorPage'
 
 class App extends Component {
+
+componentDidMount() {
+  this.props.getRides()
+}
+
   render() {
     if (this.props.loading) {
       return (
