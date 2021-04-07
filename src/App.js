@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { getRides } from './actions'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './components/Home'
@@ -9,6 +11,11 @@ import ErrorPage from './components/ErrorPage'
 
 class App extends Component {
   render() {
+    if (this.props.loading) {
+      return (
+        <h3>Loading...</h3>
+      )
+    }
     return (
       <Router>
         <Nav />
@@ -24,4 +31,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps, { getRides })(App);
